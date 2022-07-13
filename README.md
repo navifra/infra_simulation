@@ -1,3 +1,35 @@
+# How to run gazebo simulation
+## 1. with sensors, but no robots 
+Five Velodynes are placed.
+
+[![Screenshot-from-2022-06-29-18-35-16.png](https://i.postimg.cc/rwwBbMn7/Screenshot-from-2022-06-29-18-35-16.png)](https://postimg.cc/bs4VScjR)
+
+
+Terminal 1
+- roscore
+
+Terminal 2
+- cd ~/test_ws/src/velodyne_simulator/velodyne_description/
+- source ~/test_ws/devel/setup.bash
+- export GAZEBO_MODEL_PATH=`pwd`/models
+- roslaunch velodyne_description warehouse_1.launch
+
+## 2. with sensors and robots 
+Kinect camera, Luminar Iris, and Ouster Os0 lidar are added in the origin.
+
+Turtlebots and a forklift are located as well.
+
+[![ouster.png](https://i.postimg.cc/44vjxmjr/ouster.png)](https://postimg.cc/yWdLfY1P)
+
+Terminal 1
+- roscore
+
+Terminal 2
+- cd ~/test_ws/src/velodyne_simulator/velodyne_description/
+- source ~/test_ws/devel/setup.bash
+- export GAZEBO_MODEL_PATH=`pwd`/models
+- roslaunch velodyne_description warehouse_1_w_robot.launch
+
 # Licenses
 
 ## 1. ROBOTIS for TurtleBot3 (Apache License)
@@ -12,7 +44,7 @@ Originally, velodyne sensor is given from the following source:
 
 - https://bitbucket.org/DataspeedInc/velodyne_simulator/src/master/
 
-and other sensors, like Kinect camera, and Luminar, Ouster lidar, are added by Ella
+and other sensors, like Kinect camera, Luminar, and Ouster lidar, are added by Ella
 Spectation of those sensors can be edited
 
 
