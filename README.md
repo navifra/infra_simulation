@@ -1,7 +1,7 @@
 # How to run gazebo simulation
 ## 1. with sensors, but no robots 
 Five Velodynes are placed.
-
+For the simulation, you can expect the following image:
 [![Screenshot-from-2022-06-29-18-35-16.png](https://i.postimg.cc/rwwBbMn7/Screenshot-from-2022-06-29-18-35-16.png)](https://postimg.cc/bs4VScjR)
 
 
@@ -15,10 +15,10 @@ Terminal 2
 - roslaunch velodyne_description warehouse_1.launch
 
 ## 2. with sensors and robots 
-Kinect camera, Luminar Iris, and Ouster Os0 lidar are added in the origin.
+Kinect camera, Velodyne HDL-32, Velodyne VLP-16, Luminar Iris, and Ouster Os0 lidar are added in the origin.
 
 Turtlebots and a forklift are located as well.
-
+For the simulation, you can expect the following image:
 [![ouster.png](https://i.postimg.cc/44vjxmjr/ouster.png)](https://postimg.cc/yWdLfY1P)
 
 Terminal 1
@@ -44,8 +44,9 @@ Originally, velodyne sensor is given from the following source:
 
 - https://bitbucket.org/DataspeedInc/velodyne_simulator/src/master/
 
-and other sensors, like Kinect camera, Luminar, and Ouster lidar, are added by Ella
-Spectation of those sensors can be edited
+and other sensors, like Kinect camera, Luminar, and Ouster lidar, are added by Ella.
+
+Spectation of those sensors can be edited.
 
 
 
@@ -58,8 +59,9 @@ no_roof_warehouse model is used for this emvironment (warehouse_1 & warehouse_1_
 
 
 ## 4. Forklift model (No license)
-Only base and fork of the forklift, in STL and DAE file, are utilized in the code (turtlebot3_forklift.urdf.xacro)
-urdf file is made by Ella and it can be edited
+Only base and fork of the forklift, in STL and DAE file, are utilized in the code (turtlebot3_forklift.urdf.xacro).
+
+urdf file is made by Ella and it can be edited.
 
 - https://github.com/youbot/youbot_forklift
 
