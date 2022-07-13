@@ -159,13 +159,13 @@
 
   <link name="imu_link"/>
 
-  <joint name="scan_joint" type="fixed">
+  <!-- <joint name="scan_joint" type="fixed">
     <parent link="base_link"/>
     <child link="base_scan"/>
     <origin xyz="-0.064 0 0.122" rpy="0 0 0"/>
-  </joint>
+  </joint> -->
 
-  <link name="base_scan">
+  <!-- <link name="base_scan">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -188,9 +188,9 @@
                iyy="0.001" iyz="0.0"
                izz="0.001" />
     </inertial>
-  </link>
+  </link> -->
 
-  <joint name="camera_joint" type="fixed">
+  <!-- <joint name="camera_joint" type="fixed">
     <origin xyz="0.064 -0.065 0.094" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="camera_link"/>
@@ -208,7 +208,7 @@
       <geometry>
         <box size="0.012 0.132 0.020"/>
       </geometry>
-    </collision>
+    </collision> -->
 
     <!-- This inertial field needs doesn't contain reliable data!! -->
 <!--   <inertial>
@@ -218,7 +218,7 @@
                iyy="0.000498940" iyz="0.0"
                izz="0.003879257" />
     </inertial>-->
-  </link>
+  <!-- </link>
 
   <joint name="camera_rgb_joint" type="fixed">
     <origin xyz="${r200_cam_rgb_px} ${r200_cam_rgb_py} ${r200_cam_rgb_pz}" rpy="0 0 0"/>
@@ -246,6 +246,6 @@
     <parent link="camera_depth_frame"/>
     <child link="camera_depth_optical_frame"/>
   </joint>
-  <link name="camera_depth_optical_frame"/>
+  <link name="camera_depth_optical_frame"/> -->
 
 </robot>
