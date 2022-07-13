@@ -19,7 +19,8 @@ Kinect camera, Velodyne HDL-32, Velodyne VLP-16, Luminar Iris, and Ouster Os0 li
 
 Turtlebots and a forklift are located as well.
 For the simulation, you can expect the following image:
-[![ouster.png](https://i.postimg.cc/44vjxmjr/ouster.png)](https://postimg.cc/yWdLfY1P)
+
+[![Screenshot-from-2022-07-13-17-55-37.png](https://i.postimg.cc/zXXks3jq/Screenshot-from-2022-07-13-17-55-37.png)](https://postimg.cc/ThFmmdFs)
 
 Terminal 1
 - roscore
@@ -29,6 +30,21 @@ Terminal 2
 - source ~/test_ws/devel/setup.bash
 - export GAZEBO_MODEL_PATH=`pwd`/models
 - roslaunch velodyne_description warehouse_1_w_robot.launch
+
+
+## 3. with sensors and loaded robots 
+For the simulation, you can expect the following image:
+
+[![Screenshot-from-2022-07-13-17-53-34.png](https://i.postimg.cc/zGpYJLmp/Screenshot-from-2022-07-13-17-53-34.png)](https://postimg.cc/18gjB33N)
+
+Terminal 1
+- roscore
+
+Terminal 2
+- cd ~/test_ws/src/velodyne_simulator/velodyne_description/
+- source ~/test_ws/devel/setup.bash
+- export GAZEBO_MODEL_PATH=`pwd`/models
+- roslaunch velodyne_description warehouse_1_w_loaded_robot.launch
 
 # Licenses
 
