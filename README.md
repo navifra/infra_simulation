@@ -11,7 +11,7 @@ Terminal 1
 Terminal 2
 - cd ~/test_ws/src/velodyne_simulator/velodyne_description/
 - source ~/test_ws/devel/setup.bash
-- export GAZEBO_MODEL_PATH=`pwd`/models
+- export GAZEBO_MODEL_PATH=\`pwd\`/models
 - roslaunch velodyne_description warehouse_1.launch
 
 ## 2. with sensors and robots 
