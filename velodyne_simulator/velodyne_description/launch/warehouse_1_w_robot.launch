@@ -32,8 +32,8 @@
     <!-- BEGIN ROBOT 0. index starts from zero to coinside with the array index in the code-->
   <group ns="robot_0">
     <param name="tf_prefix" value="robot_0" />
-    <include file="$(find velodyne_description)/launch/robot_burger.launch.xml" >
-      <arg name="init_pose" value="-x 0.5 -y 0.5 -z 0.03" />
+    <include file="$(find velodyne_description)/launch/rectangle_amr.launch.xml" >
+      <arg name="init_pose" value="-x 0.5 -y 2.0 -z 0.03" />
       <arg name="robot_name"  value="robot_0" />
     </include>
   </group>
@@ -41,7 +41,7 @@
   <!-- BEGIN ROBOT 1 -->
   <group ns="robot_1">
     <param name="tf_prefix" value="robot_1" />
-    <include file="$(find velodyne_description)/launch/robot_waffle.launch.xml" >
+    <include file="$(find velodyne_description)/launch/amr.launch.xml" >
       <arg name="init_pose" value="-x 1.5 -y -0.5 -z 0.03" />
       <arg name="robot_name"  value="robot_1" />
     </include>
