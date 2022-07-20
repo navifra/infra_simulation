@@ -1,12 +1,17 @@
 <?xml version="1.0" ?>
 <launch>
   <arg name="paused" default="false"/>
-  <arg name="use_sim_time" default="true"/>  
+  <arg name="use_sim_time" default="true"/>
+  
+  <!-- original warehouse launch -->
+  <!-- <arg name="gui" default="false"/> -->
+  
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
   <arg name="verbose" default="false"/>
-  <arg name="world_name" value="$(find velodyne_description)/world/warehouse_1.world"/>
+  <arg name="world_name" value="$(find velodyne_description)/world/warehouse_3.world"/>
+
 
   <!-- Start gazebo and load the world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch" >
@@ -19,30 +24,30 @@
     <arg name="world_name" value="$(arg world_name)"/>
   </include>
 
-  <!-- Spawn the velodyne -->
+   <!-- Spawn the velodyne -->
   <arg name="gpu" default="false"/>
   <arg name="organize_cloud" default="false"/>
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find velodyne_description)/urdf/velodyne_warehouse.urdf.xacro' organize_cloud:=$(arg organize_cloud) gpu:=$(arg gpu)" />
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find velodyne_description)/urdf/velodyne_warehouse_3.urdf.xacro' organize_cloud:=$(arg organize_cloud) gpu:=$(arg gpu)" />
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_model" args="-urdf -param /robot_description -model velodyne"/>
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
     <param name="publish_frequency" type="double" value="30.0" />
   </node>
   
-  <!-- Spawn a Robot -->
+    <!-- Spawn a Robot -->
     <!-- BEGIN ROBOT 0. index starts from zero to coinside with the array index in the code-->
   <group ns="robot_0">
     <param name="tf_prefix" value="robot_0" />
     <include file="$(find velodyne_description)/launch/rectangle_amr.launch.xml" >
-      <arg name="init_pose" value="-x 0.5 -y 2.0 -z 0.03" />
+      <arg name="init_pose" value="-x -22 -y 2.0 -z 0.03" />
       <arg name="robot_name"  value="robot_0" />
     </include>
   </group>
-
-  <!-- BEGIN ROBOT 1 -->
+  
+    <!-- BEGIN ROBOT 1 -->
   <group ns="robot_1">
     <param name="tf_prefix" value="robot_1" />
     <include file="$(find velodyne_description)/launch/amr.launch.xml" >
-      <arg name="init_pose" value="-x 1.5 -y -0.5 -z 0.03" />
+      <arg name="init_pose" value="-x -25 -y -0.5 -z 0.03" />
       <arg name="robot_name"  value="robot_1" />
     </include>
   </group>
@@ -50,8 +55,8 @@
   <!-- BEGIN ROBOT 2 -->
   <group ns="robot_2">
     <param name="tf_prefix" value="robot_2" />
-    <include file="$(find velodyne_description)/launch/robot_waffle.launch.xml" >
-      <arg name="init_pose" value="-x 2 -y -2 -z 0.03" />
+    <include file="$(find velodyne_description)/launch/amr_w_load.launch.xml" >
+      <arg name="init_pose" value="-x -28 -y -2 -z 0.03" />
       <arg name="robot_name"  value="robot_2" />
     </include>
   </group>
@@ -60,15 +65,13 @@
   <group ns="forklift_1">
     <param name="tf_prefix" value="forklift_1" />
     <include file="$(find velodyne_description)/launch/palletjack.launch.xml" >
-      <arg name="init_pose" value="-x 1 -y -4 -z 0.03" />
+      <arg name="init_pose" value="-x 1 -y -28 -z 0.03" />
       <arg name="robot_name"  value="forklift_1" />
     </include>
   </group>
 
-
   <!-- RViz -->
   <arg name="rviz" default="true"/>
   <node if="$(arg rviz)" pkg="rviz" type="rviz" name="$(anon rviz)" respawn="false" output="screen" args="-d $(find velodyne_description)/rviz/example.rviz" />
-
 
 </launch>

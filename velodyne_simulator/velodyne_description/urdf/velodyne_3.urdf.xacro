@@ -17,12 +17,12 @@
   <link name="base_link" >
     <visual>
       <geometry>
-        <box size="13.6 20.4 0.03" />
+        <box size="101 101 0.03" />
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <box size="13.6 20.4 0.03" />
+        <box size="101 101 0.03" />
       </geometry>
     </collision>
     <inertial>
@@ -36,25 +36,30 @@
   <xacro:HDL-32E parent="base_link" name="velodyne" topic="/velodyne_pc" organize_cloud="${organize_cloud}" hz="10" samples="220" gpu="${gpu}">
     <origin xyz="0 0 0.6" rpy="0 0 0" />
   </xacro:HDL-32E>
+  
+   <xacro:include filename="$(find velodyne_description)/urdf/HDL-32E.urdf.xacro"/>
+  <xacro:HDL-32E parent="base_link" name="velodyne1" topic="/velodyne_pc_1" organize_cloud="${organize_cloud}" hz="10" samples="220" gpu="${gpu}">
+    <origin xyz="0 -27.5 0.6" rpy="0 0 0" />
+  </xacro:HDL-32E>
 
  <xacro:include filename="$(find velodyne_description)/urdf/HDL-32E.urdf.xacro"/>
   <xacro:HDL-32E parent="base_link" name="velodyne2" topic="/velodyne_pc_2" organize_cloud="${organize_cloud}" hz="10" samples="220" gpu="${gpu}">
-    <origin xyz="5 5 0.6" rpy="1.5708 0 0" />
+    <origin xyz="-27.5 0 0.6" rpy="0 0 0" />
   </xacro:HDL-32E>
 
    <xacro:include filename="$(find velodyne_description)/urdf/HDL-32E.urdf.xacro"/>
   <xacro:HDL-32E parent="base_link" name="velodyne3" topic="/velodyne_pc_3" organize_cloud="${organize_cloud}" hz="10" samples="220" gpu="${gpu}">
-    <origin xyz="5 -5 0.6" rpy="0 1.5708 0" />
+    <origin xyz="-27.5 -27.5 0.6" rpy="0 0 0" />
   </xacro:HDL-32E>
 
    <xacro:include filename="$(find velodyne_description)/urdf/HDL-32E.urdf.xacro"/>
   <xacro:HDL-32E parent="base_link" name="velodyne4" topic="/velodyne_pc_4" organize_cloud="${organize_cloud}" hz="10" samples="220" gpu="${gpu}">
-    <origin xyz="-5 5 0.6" rpy="0 0 0" />
+    <origin xyz="-27.5 27.5 0.6" rpy="0 0 0" />
   </xacro:HDL-32E>
 
    <xacro:include filename="$(find velodyne_description)/urdf/HDL-32E.urdf.xacro"/>
   <xacro:HDL-32E parent="base_link" name="velodyne5" topic="/velodyne_pc_5" organize_cloud="${organize_cloud}" hz="10" samples="220" gpu="${gpu}">
-    <origin xyz="-5 -5 0.6" rpy="0 0 0" />
+    <origin xyz="27.5 -27.5 0.6" rpy="0 0 0" />
   </xacro:HDL-32E>
 
 <gazebo>
