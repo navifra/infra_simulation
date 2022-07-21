@@ -1,18 +1,56 @@
+# How to install
+## 1. Check ROS and Gazebo
+$ rosversion -d
+
+$ gazebo --version
+
+*** 가제보 설치가 안되어있다면 ros version에 맞게 아래와 같이 설치해야함. (noetic 기준) 
+
+$ sudo apt install ros-noetic-turtlebot3-msgs ros-noetic-gazebo-ros ros-noetic-robot-state-publisher -y
+
+## 2. 설치 방법 
+(*** 아래의 `<workspace name>`는 바꾸어 주기)
+
+(***src안에 velodyne_simulator, turtlebot3, CMakeLists.txt, README.md가 들어있어야 함)
+  
+$ cd
+
+$ mkdir -p `<workspace name>`/src
+
+$ cd `<workspace name>`
+
+$ git clone https://github.com/navifra/infra_simulation.git
+
+$ mv infra_simulation/* src/
+
+$ rm -rf infra_simulation
+
+$ catkin_make -DCMAKE_BUILLD_TYPE=Release
+
 # How to run gazebo simulation
 ## 1. with sensors, but no robots 
 Five Velodynes are placed.
 For the simulation, you can expect the following image:
 [![Screenshot-from-2022-06-29-18-35-16.png](https://i.postimg.cc/rwwBbMn7/Screenshot-from-2022-06-29-18-35-16.png)](https://postimg.cc/bs4VScjR)
 
+(***zsh을 사용하는 경우, bash를 위한 source부분에서 안될 수 있음. 그때는 터미널에 exec bash를 치고 아래의 코드를 작성하거나, zh의 방식을 따라 실행해야함.) 
+
+(*** 아래의 `<workspace name>`는 바꾸어 주기)
 
 Terminal 1
-- roscore
+
+$ roscore
 
 Terminal 2
-- cd ~/test_ws/src/velodyne_simulator/velodyne_description/
-- source ~/test_ws/devel/setup.bash
-- export GAZEBO_MODEL_PATH=\`pwd\`/models
-- roslaunch velodyne_description warehouse_1.launch
+
+$ cd ~/`<workspace name>`/src/velodyne_simulator/velodyne_description/
+
+$ source ~/`<workspace name>`/devel/setup.bash
+
+$ export GAZEBO_MODEL_PATH=\`pwd\`/models
+
+$ roslaunch velodyne_description warehouse_1.launch
+
 
 ## 2. with sensors and robots 
 Kinect camera, Velodyne HDL-32, Velodyne VLP-16, Luminar Iris, and Ouster Os0 lidar are added in the origin.
@@ -23,13 +61,18 @@ For the simulation, you can expect the following image:
 [![Screenshot-from-2022-07-13-17-55-37.png](https://i.postimg.cc/zXXks3jq/Screenshot-from-2022-07-13-17-55-37.png)](https://postimg.cc/ThFmmdFs)
 
 Terminal 1
-- roscore
+
+$ roscore
 
 Terminal 2
-- cd ~/test_ws/src/velodyne_simulator/velodyne_description/
-- source ~/test_ws/devel/setup.bash
-- export GAZEBO_MODEL_PATH=\`pwd\`/models
-- roslaunch velodyne_description warehouse_1_w_robot.launch
+
+$ cd ~/`<workspace name>`/src/velodyne_simulator/velodyne_description/
+
+$ source ~/`<workspace name>`/devel/setup.bash
+
+$ export GAZEBO_MODEL_PATH=\`pwd\`/models
+
+$ roslaunch velodyne_description warehouse_1_w_robot.launch
 
 
 ## 3. with sensors and loaded robots 
@@ -38,13 +81,18 @@ For the simulation, you can expect the following image:
 [![Screenshot-from-2022-07-13-17-53-34.png](https://i.postimg.cc/zGpYJLmp/Screenshot-from-2022-07-13-17-53-34.png)](https://postimg.cc/18gjB33N)
 
 Terminal 1
-- roscore
+
+$ roscore
 
 Terminal 2
-- cd ~/test_ws/src/velodyne_simulator/velodyne_description/
-- source ~/test_ws/devel/setup.bash
-- export GAZEBO_MODEL_PATH=\`pwd\`/models
-- roslaunch velodyne_description warehouse_1_w_loaded_robot.launch
+
+$ cd ~/`<workspace name>`/src/velodyne_simulator/velodyne_description/
+
+$ source ~/`<workspace name>`/devel/setup.bash
+
+$ export GAZEBO_MODEL_PATH=\`pwd\`/models
+
+$ roslaunch velodyne_description warehouse_1_w_loaded_robot.launch
 
 
 # Worlds
