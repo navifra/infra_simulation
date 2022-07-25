@@ -56,17 +56,6 @@
     </include>
   </group>
 
-
-  <!-- BEGIN FORKLIFT 1 -->
-  <group ns="forklift_1">
-    <param name="tf_prefix" value="forklift_1" />
-    <include file="$(find velodyne_description)/launch/palletjack_w_load.launch.xml" >
-      <arg name="init_pose" value="-x -2 -y -4 -z 0.03" />
-      <arg name="robot_name"  value="forklift_1" />
-    </include>
-  </group>
-
-
   <!-- RViz -->
   <arg name="rviz" default="true"/>
   <node if="$(arg rviz)" pkg="rviz" type="rviz" name="$(anon rviz)" respawn="false" output="screen" args="-d $(find velodyne_description)/rviz/example.rviz" />
