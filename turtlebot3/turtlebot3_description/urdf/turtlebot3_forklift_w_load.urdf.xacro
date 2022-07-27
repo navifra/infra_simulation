@@ -33,42 +33,6 @@
       	<inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
     </inertial>
   </link>
-
-<!-- 
-  <link name="base_fork">
-			<inertial>
-				<origin xyz="0 0 0" rpy="0 0 0" />
-				<mass value="0.01"/>
-				<inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
-			</inertial>
-			
-			<visual>
-				<origin xyz="-0.5 0 0" rpy="0 0 0" />
-				<geometry>
-					<mesh filename="package://turtlebot3_description/meshes/bases/forklift_fork.STL" scale="3.0 3.0 3.0"/>
-				</geometry>
-				<material name="grey" />
-			</visual>
-			
-			<collision>
-				<origin xyz="-1 0 0" rpy="0 0 0" />
-				<geometry>
-					<mesh filename="package://turtlebot3_description/meshes/bases/forklift_fork.STL"/>
-				</geometry>
-			</collision>
-		</link>
-	
-		<joint name="fork_axis" type="prismatic">
-			<origin xyz="0 0 -0.14" rpy="0 0 0" />
-			<parent link="base_link_forklift"/>
-			<child link="base_fork"/>
-			<axis xyz="0 0 1" />
-			
-			<dynamics damping="1.0" friction="1.0" />
-			<limit effort="1" velocity="0.2" lower="0" upper="0.2"/> 
-    	<safety_controller k_position="20" k_velocity="25" soft_lower_limit="-0.1" soft_upper_limit="0.2" />
-		</joint> -->
-
    
   <joint name="wheel_left_joint" type="continuous">
     <parent link="base_link_forklift"/>
@@ -164,36 +128,5 @@
   </joint>
 
   <link name="imu_link"/>
-
-  <!-- <joint name="scan_joint" type="fixed">
-    <parent link="base_link_forklift"/>
-    <child link="base_scan"/>
-    <origin xyz="-0.032 0 0.172" rpy="0 0 0"/>
-  </joint>
-
-  <link name="base_scan">
-    <visual>
-      <origin xyz="0 0 0.0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://turtlebot3_description/meshes/sensors/lds.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="dark"/>
-    </visual>
-
-    <collision>
-      <origin xyz="0.015 0 -0.0065" rpy="0 0 0"/>
-      <geometry>
-        <cylinder length="0.0315" radius="0.055"/>
-      </geometry>
-    </collision>
-
-    <inertial>
-      <mass value="0.114" />
-      <origin xyz="0 0 0" />
-      <inertia ixx="0.001" ixy="0.0" ixz="0.0"
-               iyy="0.001" iyz="0.0"
-               izz="0.001" />
-    </inertial>
-  </link> -->
 
 </robot>

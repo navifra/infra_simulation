@@ -131,7 +131,7 @@
 
   <link name="imu_link"/>
 
-  <!-- <joint name="scan_joint" type="fixed">
+  <joint name="scan_joint" type="fixed">
     <parent link="base_link_burger"/>
     <child link="base_scan"/>
     <origin xyz="-0.032 0 0.172" rpy="0 0 0"/>
@@ -160,6 +160,6 @@
                iyy="0.001" iyz="0.0"
                izz="0.001" />
     </inertial>
-  </link> -->
+  </link>
 
 </robot>
