@@ -34,22 +34,22 @@
 
   <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
   <xacro:VLP-16 parent="base_link" name="velodyne16" topic="/velodyne_points" organize_cloud="${organize_cloud}" hz="10" samples="440" gpu="${gpu}">
-    <origin xyz="0 0 3" rpy="0 0 0" />
+    <origin xyz="0 0 0.6" rpy="0 0 0" />
   </xacro:VLP-16>
 
   <xacro:include filename="$(find velodyne_description)/urdf/HDL-32E.urdf.xacro"/>
   <xacro:HDL-32E parent="base_link" name="velodyne" topic="/velodyne_pc" organize_cloud="${organize_cloud}" hz="10" samples="220" gpu="${gpu}">
-    <origin xyz="0 0 3" rpy="0 0 0" />
+    <origin xyz="0 0 0.6" rpy="0 0 0" />
   </xacro:HDL-32E>
 
   <xacro:include filename="$(find velodyne_description)/urdf/OS0-32.urdf.xacro"/>
-  <xacro:OS0-32 parent="base_link" name="ouster" topic="/ouster_points" organize_cloud="${organize_cloud}" hz="10" samples="440" gpu="${gpu}">
-    <origin xyz="0 0 3" rpy="0 0 0" />
+  <xacro:OS0-32 parent="base_link" name="ouster" topic="/ouster_points" organize_cloud="${organize_cloud}" hz="10" samples="10" gpu="${gpu}">
+    <origin xyz="0 0 0.6" rpy="0 0 0" />
   </xacro:OS0-32>
 
   <xacro:include filename="$(find velodyne_description)/urdf/Iris.urdf.xacro"/>
   <xacro:Iris parent="base_link" name="luminar" topic="/luminar_points" organize_cloud="${organize_cloud}" hz="10" samples="440" gpu="${gpu}">
-    <origin xyz="0 0 3" rpy="0 0 0" />
+    <origin xyz="0 0 0.6" rpy="0 0 0" />
   </xacro:Iris>
 
   <xacro:include filename="$(find velodyne_description)/urdf/kinect.urdf.xacro"/>

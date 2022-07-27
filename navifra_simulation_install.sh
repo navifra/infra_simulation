@@ -73,6 +73,7 @@ cd
 mkdir -p $name_new_workspace/src
 cd $name_new_workspace
 git clone https://github.com/navifra/infra_simulation.git
+mv infra_simulation/.git/ src/
 mv infra_simulation/* src/
 rm -rf infra_simulation/
 rosdep install --from-paths src --ignore-src -r -y
