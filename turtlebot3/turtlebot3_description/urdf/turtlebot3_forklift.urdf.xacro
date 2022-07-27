@@ -23,7 +23,7 @@
     <collision>
       <origin xyz="0 0 0.070" rpy="0 0 0"/>
       <geometry>
-       <mesh filename="package://turtlebot3_description/meshes/bases/forklift_base_convex.dae"  />
+        <mesh filename="package://turtlebot3_description/meshes/bases/forklift_base.STL" scale="3.0 3.0 3.0"/>
       </geometry>
     </collision>
 
