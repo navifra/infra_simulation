@@ -21,9 +21,9 @@
     </visual>
 
     <collision>
-      <origin xyz="-0.032 0 0.070" rpy="0 0 0"/>
+      <origin xyz="-0.032 0 0.250" rpy="0 0 0"/>
       <geometry>
-        <box size="0.140 0.140 0.143"/>
+        <mesh filename="package://turtlebot3_description/meshes/bases/robot_base_w_load.dae" scale="0.5 0.7 0.7"/>
       </geometry>
     </collision>
 
@@ -39,7 +39,7 @@
   <joint name="wheel_left_joint" type="continuous">
     <parent link="base_link_burger"/>
     <child link="wheel_left_link"/>
-    <origin xyz="0.0 0.08 0.023" rpy="-1.57 0 0"/>
+    <origin xyz="0.0 0.2 0.023" rpy="-1.57 0 0"/>
     <axis xyz="0 0 1"/>
   </joint>
 
@@ -71,7 +71,7 @@
   <joint name="wheel_right_joint" type="continuous">
     <parent link="base_link_burger"/>
     <child link="wheel_right_link"/>
-    <origin xyz="0.0 -0.080 0.023" rpy="-1.57 0 0"/>
+    <origin xyz="0.0 -0.2 0.023" rpy="-1.57 0 0"/>
     <axis xyz="0 0 1"/>
   </joint>
 
