@@ -13,7 +13,7 @@
 
   <link name="base_link">
     <visual>
-      <origin xyz="-0.032 0 0.0" rpy="0 0 0"/>
+      <origin xyz="-0.032 0 0.050" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://turtlebot3_description/meshes/bases/robot_base.dae" scale="0.5 0.7 0.3"/>
       </geometry>
@@ -21,7 +21,7 @@
     </visual>
 
     <collision>
-      <origin xyz="-0.032 0 0.250" rpy="0 0 0"/>
+      <origin xyz="-0.032 0 0.10" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://turtlebot3_description/meshes/bases/robot_base.dae" scale="0.5 0.7 0.3"/>
       </geometry>

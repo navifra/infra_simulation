@@ -12,17 +12,17 @@
   <joint name="footprint" type="fixed" >
    <parent link="base_footprint" />
     <child link="base_link" />
-    <origin xyz="0 0 0.03" rpy="0 0 0" />
+    <origin xyz="0 0 0.1" rpy="0 0 0" />
   </joint>
   <link name="base_link" >
     <visual>
       <geometry>
-        <box size="60 100 0.03" />
+        <box size="60 100 0.1" />
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <box size="60 100 0.03" />
+        <box size="60 100 0.1" />
       </geometry>
     </collision>
     <inertial>
