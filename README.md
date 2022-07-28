@@ -76,10 +76,6 @@ Originally, velodyne sensor is given from the following source:
 
 - https://bitbucket.org/DataspeedInc/velodyne_simulator/src/master/
 
-and other sensors, like Kinect camera, Luminar, and Ouster lidar, are added by Ella.
-
-Spectation of those sensors can be edited.
-
 
 
 ## 3. AWS-robomaker-small-warehouse-world (MIT License) 
@@ -93,12 +89,4 @@ no_roof_warehouse model is used for this emvironment (warehouse_1 & warehouse_1_
 ## 4. Forklift model (No license)
 Only base and fork of the forklift, in STL and DAE file, are utilized in the code (turtlebot3_forklift.urdf.xacro).
 
-urdf file is made by Ella and it can be edited.
-
 - https://github.com/youbot/youbot_forklift
-
-
-
-## 5. Extra models (No license)
-
-- https://github.com/osrf/gazebo_models
