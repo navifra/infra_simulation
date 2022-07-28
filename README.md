@@ -62,6 +62,11 @@ Azure Kinect DK, Velodyne HDL-32, Velodyne VLP-16, Luminar Iris, and Ouster Os0 
 The following image can be expected:
 [![warehouse-1-w-robot.png](https://i.postimg.cc/MGf9sLRb/warehouse-1-w-robot.png)](https://postimg.cc/mcR3k8mt)
 
+To move robots, change <robot_name> and run the code below:
+```
+$ rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=<robot_name>/cmd_vel
+```
+
 # Licenses
 
 ## 1. ROBOTIS for TurtleBot3 (Apache License)
