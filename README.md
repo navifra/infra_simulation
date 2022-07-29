@@ -1,3 +1,17 @@
+# Introduce 3D Lidar tracking gazevo simulation field
+
+ROS1 기반 외부의 3D Lidar 센서와 로봇을 추종하기 위한 시뮬레이션 환경을 구축했습니다. 
+사용자는 여러대의 3D Lidar를 가상의 공장 환경에 배치할 수 있고, ros_msg를 통해 주변 환경에 대한 Lidar Point를 수신 할 수 있습니다.
+또한, 동시에 여러대의 로봇을 cmd_vel topic을 통해 조작하여 움직일 수 있습니다.
+3D Lidar를 통한 Robot or Object tracking 테스트 가능합니다.
+
+We built a simulation environment for tracking ROS1-based external 3D Lidar sensors and robots.
+Users can deploy multiple 3D Lidars in a virtual factory environment and receive Lidar Points for the surrounding environment through ros_msg.
+Also, you can move multiple robots at the same time by manipulating them through cmd_vel topic.
+It is possible to test Robot or Object tracking through 3D Lidar.
+
+
+
 # PC Required Specifications
 The current recommended and tested environment is **Ubuntu 20.04 LTS**. 
 
